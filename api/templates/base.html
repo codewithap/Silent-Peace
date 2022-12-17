@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css" media="all" />
+ 
+  <title>Silent Peace</title>
+</head>
+<body>
+  
+  <nav class="navigation">
+    <div class="top"> 
+    <button onclick="openClose()">
+      <img src="{{  url_for('static', filename='img/menu.png')  }}" alt="">
+    </button>
+      <h2>Silent Peace</h2>
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="" />
+    </div>
+    <div class="bottom">
+      <button class="navbtn"><span>Home</span><img src="{{ url_for('static', filename='img/home.png') }}"></button>
+      <button class="navbtn"><span>Login</span><img src="{{ url_for('static', filename='img/login.png') }}" /></button>
+      <button class="navbtn"><span>Sign Up</span><img src="{{ url_for('static', filename='img/signup.png') }}" /></button>
+      <button class="navbtn"><span>Info</span><img src="{{ url_for('static', filename='img/info.png') }}" /></button>
+      <button class="navbtn"></button>
+    </div>
+    
+  </nav>
+  <section style="margin-left: 3.4rem; ">
+    
+    {% block content %} 
+
+
+    {% endblock %}
+    
+  </section>
+  <script type="text/javascript" charset="utf-8">
+    
+  </script>
+ <script src="{{  url_for('static',filename='js/main.js')  }}"type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
+  
