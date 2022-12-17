@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: none;
+    outline: none;
+}
+
+.navigation{
+    
+}
+
+.navigation .top{
+    background: #000611;
+    height: 3.5rem;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation .top button{
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+}
+
+.navigation .top button img{
+    height: 50px;
+}
+
+.navigation .top button:hover{
+    outline: 1px solid #fff;
+}
+
+.navigation .top h2{
+    color: #F4F4F4;
+}
+
+.navigation .top img{
+    width: 55px;
+    height: 55px;
+}
+
+.navigation .bottom{
+    height: calc(100% - calc(3.5rem + 20px));
+    width: 3.4rem;
+    background: #0e0e0e;
+    position: absolute;
+    top: calc(3.5rem + 20px);
+    left: 0;
+    z-index: 10;
+    transition: 0.3s ease-in;
+    
+    
+}
+
+.navbtn img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.navbtn{
+    background: #000b17f6;
+    border: none;
+    margin: 0 auto 0 auto;
+    width: 100%;
+    display: block;
+    padding: 10px 5px;
+    transition: 0.2s ease-in;
+}
+
+.navbtn:hover{
+    background: #8b2aff;
+}
+
+.navbtn span{
+    color: #fff;
+    width: 0;
+    height: 0;
+    display: none;
+    position: relative;
+    bottom: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s ease-in;
+}
