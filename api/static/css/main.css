@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
     font-family: none;
     outline: none;
+    font-family: 'Baloo Bhai 2';
 }
 
 .navigation{
     
+}
+
+body{
+    background: rgb(10,3,134);
+background: linear-gradient(90deg, rgba(10,3,134,0.8463799857642351) 0%, rgba(132,43,138,0.8553478971440741) 35%, rgba(17,207,12,0.7648535203144624) 99%, rgba(0,212,255,1) 99%); 
 }
 
 .navigation .top{
@@ -45,7 +53,8 @@
 .navigation .bottom{
     height: calc(100% - calc(3.5rem + 20px));
     width: 3.4rem;
-    background: #0e0e0e;
+    background: #0e0e0e91;
+    backdrop-filter: blur(4px);
     position: absolute;
     top: calc(3.5rem + 20px);
     left: 0;
@@ -61,8 +70,9 @@
 }
 
 .navbtn{
-    background: #000b17f6;
+    background: transparent;
     border: none;
+    border-bottom: 2px solid #fff;
     margin: 0 auto 0 auto;
     width: 100%;
     display: block;
@@ -71,7 +81,7 @@
 }
 
 .navbtn:hover{
-    background: #8b2aff;
+    background: #00000096;
 }
 
 .navbtn span{
