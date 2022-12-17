@@ -61,7 +61,6 @@ background: linear-gradient(90deg, rgba(10,3,134,0.8463799857642351) 0%, rgba(13
     z-index: 10;
     transition: 0.3s ease-in;
     
-    
 }
 
 .navbtn img{
@@ -94,4 +93,38 @@ background: linear-gradient(90deg, rgba(10,3,134,0.8463799857642351) 0%, rgba(13
     font-weight: bold;
     font-size: 1.1rem;
     transition: 0.3s ease-in;
+}
+
+.joinUs button{
+    display: block;
+    margin: auto;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+a.my-button{
+ background: linear-gradient(to right,#196BCA ,#6433E0);
+ background-color: #196BCA;
+ color: #fff;
+ font-family: Trebuchet MS;
+ font-size: 1.1rem;
+ font-weight: 800;
+ font-style: normal;
+ text-decoration: none;
+ padding: 10px 15px;
+ border: none;
+ border-radius: 10px;
+ display: block;
+ justify-content: center;
+ align-items: center;
+ margin: auto;
+ text-align: center;
+}
+
+a.my-button:hover{
+ background: linear-gradient(to right,#5482d0 ,#7d5ee3);
+ background-color: #5482d0;
+}
+a.my-button:active{
+ transform: scale(0.95);
 }
