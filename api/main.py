@@ -6,12 +6,12 @@ from pymongo.server_api import ServerApi
 
 app = Flask(__name__) 
 
-from .admin import routes
+import admin
 app.secret_key = '##@$sGwJCyEn4DVw46fm736hymzkHztDZVNK0c7Mhywd'
 myclient = pymongo.MongoClient("mongodb+srv://speace:sp1234@silentpeace.d2wm9xi.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 db = myclient["silentpeace"]
 col = db["Members"]
-app.register_blueprint(admin.admin_bp, url_prefix='/admin')
+app.register_blueprint(admin.admin, url_prefix='/admin')
 
 
 @app.route("/")

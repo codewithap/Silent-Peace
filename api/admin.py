@@ -2,12 +2,12 @@ from flask import Blueprint
 
 
 # Defining a blueprint
-admin_bp = Blueprint(
-    'admin_bp', __name__,
+admin = Blueprint(
+    'admin', __name__,
     template_folder='templates',
     static_folder='static'
 )
 
-@admin_bp.route('/admin')   # Focus here
+@admin.route('/')   # Focus here
 def admin_home():
     return "Hello Admin!" 
