@@ -53,4 +53,4 @@ class database:
 #   col.delete_one(user)
 
 # col.delete_many((col.find()[0]))
-# print(list(col.find()))
+print(list(col.find()))

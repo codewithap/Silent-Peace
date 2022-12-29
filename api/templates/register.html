@@ -55,8 +55,12 @@
     <input type="text" name="name" id="name" value="" placeholder="Name"/>
     <input type="text" name="username" id="uname" value="" placeholder="User Name"/>
     <input type="email" name="email" id="email" placeholder="Email">
-    <input type="number" name="num" id="contact" placeholder="Contact No.">
+    <input type="tel" maxlength="10" name="num" id="contact" placeholder="Contact No.">
     <input type="password" name="passwd" id="passwd" placeholder="Password">
+    <small style="padding: 0.5rem 1rem;color: #fff;font-weight: bold;">
+      Password must contain 7 to 15 characters which contain at least one numeric digit and a special character
+    </small>
+    <!-- <br> -->
     <button disabled="true" id="btn">Sign Up</button>
   </form>
     <h3>{{ msg }} </h3>
@@ -85,17 +89,25 @@ if(inputtxt.value.match(passw)){
 
 
 function check(){
+    pass = CheckPassword(passwd)
+    if(pass == true){
+      passwd.style.borderColor = "lightgreen"
+      passwd.style.color = "lightgreen"
+    }else{
+      passwd.style.borderColor = "orangered"
+      passwd.style.color = "orangered"
+    }
     if(name.value.length >=3 && username.value.length > 2 && email.value.length >= 10 && number.value.length >= 10 && passwd.value.length >= 5 ){
         pass = CheckPassword(passwd)
-        console.log(pass)
         if(pass == true){
+          passwd.style.borderColor = "green"
+          // passwd.style.placeHolder = "red"
             button.disabled = false;
         }
-          
-      
   }
   else{
       button.disabled = true;
+      
   }
 }
   
