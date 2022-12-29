@@ -3,10 +3,11 @@ import pymongo
 from db import database
 from pymongo.server_api import ServerApi
 
-
 app = Flask(__name__) 
 
 import admin
+
+
 app.secret_key = '##@$sGwJCyEn4DVw46fm736hymzkHztDZVNK0c7Mhywd'
 myclient = pymongo.MongoClient("mongodb+srv://speace:sp1234@silentpeace.d2wm9xi.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 db = myclient["silentpeace"]
@@ -18,6 +19,8 @@ app.register_blueprint(admin.admin, url_prefix='/admin')
 @app.route("/silent_peace")
 def home():
     return render_template("home.html")
+
+
 
 @app.route('/login',methods=['GET','POST'])
 def login():
@@ -36,10 +39,10 @@ def login():
     elif request.method == "GET":
         return render_template('login.html')
 
+
+
 @app.route("/register", methods=["GET","POST"])
 def signup():
-    r = ""
-    #print('name' in request.form, request.method == 'POST', 'username' in request.form,"email" in request.form,"num" in request.form, "password" in request.form)
     if request.method == 'POST' and 'name' in request.form and 'username' in request.form and "email" in request.form and "num" in request.form and "passwd" in request.form :
         name = request.form['name']
         username = request.form["username"]
@@ -51,8 +54,6 @@ def signup():
           return render_template("home.html", msg = response[0])
         elif response[1] == False:
           return render_template("register.html", msg = response[0])
-        # r = register(name,username,email,number,password)
-        # print(r)
     else: 
       return render_template("register.html" )
 

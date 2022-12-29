@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template
-
+from db import database
 
 # Defining a blueprint
 admin = Blueprint(
@@ -10,5 +10,6 @@ admin = Blueprint(
 
 @admin.route('/')   # Focus here
 def admin_home():
-    return render_template("admin.html")
+  lst = database.find()
+  return render_template("admin.html", lst = lst)
 

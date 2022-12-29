@@ -43,6 +43,13 @@ class database:
     else:
       col.insert_one(udict)
       return ["Registered Successfully....",True]
+  
+  def findAll():
+    return list(col.find())
+  
+  def find(q):
+    return list(col.find(q))
+  
 
 
 
@@ -53,4 +60,4 @@ class database:
 #   col.delete_one(user)
 
 # col.delete_many((col.find()[0]))
-print(list(col.find()))
+# print(list(col.find()))
