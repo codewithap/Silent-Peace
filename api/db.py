@@ -7,11 +7,6 @@ db = myclient["silentpeace"]
 col = db["Members"]
 
 class database:
-  def __init__(self,name,username,passwd):
-    # self.name = name
-    # self.username = username
-    # self.passwd = passwd
-    pass
 
   def login(username,passwd):
     udict = { "userName" : username }
@@ -24,6 +19,32 @@ class database:
         return ['Incorrect Password',False]
     else:
       return [f"No user named ' {username} '",False]
+  
+  
+  def register(name, username, passwd, email, number):
+    udict = {
+      "name": name,
+      "userName": username,
+      "passwd" : passwd,
+      "email" : email,
+      "number" : number
+      "role": "member"
+    }
+    udict1 = {"userName": username}
+    udict2 = {"email" : email}
+    udict3 = {"number" : number}
+    
+    if len(list(col.find(udict1)))>0:
+      return ["Username already exists...",False]
+    elif len(list(col.find(udict2)))>0:
+      return ["Email already exists...", False]
+    elif len(list(col.find(udict3)))>0:
+      return ["Number already exists....",False]
+    else:
+      col.insert_one(udict)
+      return ["Registered Successfully....",True]
+
+
 
 
 # database.login("ap1 65","Arijit1234#")

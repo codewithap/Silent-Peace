@@ -42,14 +42,15 @@ def signup():
         email = request.form.get('email')
         number = request.form.get('num')
         password = request.form.get('passwd')
+        response = database.register(name, username, passwd, email, number)
+        if response[1] == True:
+          return render_template("home.html", msg = response)
+        elif response[1] == False:
+          return render_template("register.html", msg = response)
         # r = register(name,username,email,number,password)
         # print(r)
     else: 
-        try:
-            r = f"{request.method},{request.form['name']} ,{request.form['username']}, {request.form.get('email')},{request.form.get('num')}, {request.form.get('passwd')} "
-        except:
-            r = "err !"
-    return render_template("register.html", r =r )
+      return render_template("register.html" )
 
 
 if __name__ == "__main__":
