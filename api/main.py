@@ -44,9 +44,9 @@ def signup():
         password = request.form.get('passwd')
         response = database.register(name, username, passwd, email, number)
         if response[1] == True:
-          return render_template("home.html", msg = response)
+          return render_template("home.html", msg = response[0])
         elif response[1] == False:
-          return render_template("register.html", msg = response)
+          return render_template("register.html", msg = response[0])
         # r = register(name,username,email,number,password)
         # print(r)
     else: 
