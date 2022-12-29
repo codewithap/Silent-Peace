@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,redirect, url_for, session Blueprint
+from flask import Flask, render_template, request,redirect, url_for, session, Blueprint
 import pymongo
 from db import database
 from pymongo.server_api import ServerApi
