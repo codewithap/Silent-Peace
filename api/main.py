@@ -42,7 +42,7 @@ def signup():
         email = request.form.get('email')
         number = request.form.get('num')
         password = request.form.get('passwd')
-        response = database.register(name, username, passwd, email, number)
+        response = database.register(name, username, password, email, number)
         if response[1] == True:
           return render_template("home.html", msg = response[0])
         elif response[1] == False:
@@ -54,4 +54,4 @@ def signup():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True, host="0.0.0.0")
