@@ -27,7 +27,7 @@ class database:
       "userName": username,
       "passwd" : passwd,
       "email" : email,
-      "number" : number
+      "number" : number,
       "role": "member"
     }
     udict1 = {"userName": username}
