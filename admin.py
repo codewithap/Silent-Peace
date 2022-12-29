@@ -10,6 +10,6 @@ admin = Blueprint(
 
 @admin.route('/')   # Focus here
 def admin_home():
-  lst = database.find()
+  lst = database.findAll()
   return render_template("admin.html", lst = lst)
 
