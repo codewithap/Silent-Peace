@@ -1,10 +1,20 @@
 import pymongo 
 from pymongo.server_api import ServerApi
 
-myclient = pymongo.MongoClient("mongodb+srv://speace:sp1234@silentpeace.z6bqi6l.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
+myclient = pymongo.MongoClient("mongodb+srv://speace:sp1234@silentpeace.d2wm9xi.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 
-mydb = myclient["silentpeace"]
-mycol = mydb["Members"]
+db = myclient["silentpeace"]
+col = db["Members"]
+
+#userDict = { "name": "Arijit Paine", "userName":"ap165", "role":"co-founder","mobile":"919434671110","email": "arijitpaine649@gmail.com","passwd":"Arijit1234#"}
+#x = col.insert_one(userDict)
+
+
+
+query = { "userName": "ap165" }
+doc = col.find(query)
+print(doc[0])
+
 
 #print(mycol)
 """
@@ -48,10 +58,11 @@ for x in mycol.find({},{ "_id": 0, "name": 1, "address": 1 }):
 
 for x in mycol.find({},{ "address": 0 }):
   print(x)
-  """
 myquery = { "address": "Park Lane 38" }
 
 mydoc = mycol.find(myquery)
 
 for x in mydoc:
   print(x)
+  
+  """

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<br><br>
+<style type="text/css" media="all">
+  form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+  }
+  form input{
+    padding: 5px 15px;
+    margin: 5px 0;
+    width: 300px;
+    background: #FCFCFC6B;
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  
+  form input::placeholder{
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-style: italic;
+  }
+  
+  form button{
+    padding: 8px 20px;
+    margin: 5px;
+    border-radius: 8px;
+    color: #fff;
+    background: #292929;
+    font-weight: bold
+  }
+  
+  form{
+    background:  #0000003B;
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    border: 2px solid #fff;
+    width: 350px;
+    margin: auto;
+    padding: 10px;
+    box-shadow: 2px 2px 5px 3px #46464B40;
+    
+  }
+</style>
+<div>
+
+  <form action="/login" method="post" accept-charset="utf-8">
+    <h2 style="text-align: center;color: #fff">Login</h2><br>
+    <input type="text" name="username" id="uname" value="" placeholder="User Name"/>
+    <input type="password" name="passwd" id="passwd" placeholder="Password">
+    <button id="btn">Login</button>
+  </form>
+    <h3 style="text-align: center; color: green;">{{ msg }} </h3>
+</div>
+
+
+{% endblock %}
