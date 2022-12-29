@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,redirect, url_for, session
+from flask import Flask, render_template, request,redirect, url_for, session Blueprint
 import pymongo
 from db import database
 from pymongo.server_api import ServerApi
@@ -11,7 +11,7 @@ app.secret_key = '##@$sGwJCyEn4DVw46fm736hymzkHztDZVNK0c7Mhywd'
 myclient = pymongo.MongoClient("mongodb+srv://speace:sp1234@silentpeace.d2wm9xi.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 db = myclient["silentpeace"]
 col = db["Members"]
-app.register_blueprint(admin.admin, url_prefix='/admin')
+app.register_blueprint(admin.admin_bp, url_prefix='/admin')
 
 
 @app.route("/")
