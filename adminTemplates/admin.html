@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html>
+{% extends "base2.html" %}
+{% block content %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-</head>
+<h1>Welcome to Home</h1>
+<br><br>
+<ol>
+  {% for members in lst %}
+  <li>{{ members }}</li><br>
+  {% endfor %}
 
-<body>
-<h1>Hello World</h1>
+</ol>
 
-{% for member in lst %}
-  <small><bold>{{member}}</bold></small><br><br>
-{% endfor %}
-</body>
 
-</html>
+{% endblock %}

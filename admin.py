@@ -8,7 +8,7 @@ admin = Blueprint(
     static_folder='adminStatic'
 )
 
-@admin.route('/')   # Focus here
+@admin.route('/')
 def admin_home():
   lst = database.findAll()
   return render_template("admin.html", lst = lst)
